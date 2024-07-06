@@ -37,6 +37,7 @@ let cubeRotLerpY = 0
 
 let lastMouseX = null
 let lastMouseY = null
+
 function RotateLoop(){
     if (!mouseDown){
         dtSinceMouseUp += dt
@@ -62,8 +63,6 @@ function RotateLoop(){
     lastMouseY = mouseY
 
     container.style.transform = "rotateX(" + -cubeRotLerpX + "deg) rotateY(" + cubeRotLerpY + "deg)"
-
-    setTimeout(RotateLoop, timeout);
 }
 
-RotateLoop()
+setInterval(RotateLoop, timeout)

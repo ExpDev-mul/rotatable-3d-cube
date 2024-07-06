@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf8"/>
+        <script src="./index.js" defer>
+        <title>3D</title>
+
+        <style>
+            #container{
+                position: absolute;
+                width: 250px;
+                height: 250px;
+                background-color: none;
+                left: 0;
+                top: 0;
+                margin-left: calc(50% - 125px);
+                margin-top: 250px;
+                transform-style: preserve-3d;
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+
+            .face{
+                width: 250px;
+                height: 250px;
+                background-color: rgba(0, 0, 255, 0.5);
+                position: absolute;
+                margin-left: calc(50% - 125px);
+                margin-top: calc(50% - 125px);
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: Roboto;
+                font-size: 50px;
+                font-weight: bold;
+                user-select: none;
+            }
+
+            .face:hover{
+                opacity: 0;
+            }
+
+            #front{
+                transform: translateZ(125px);
+            }
+
+            #back{
+                transform: translateZ(-125px) rotateY(180deg);
+            }
+
+            #left{
+                transform: translateX(-125px) rotateY(-90deg);
+            }
+
+            #right{
+                transform: translateX(125px) rotateY(90deg);
+            }
+
+            #top {
+                transform: translateY(-125px) rotateX(90deg);
+            }
+
+            #bottom {
+                transform: translateY(125px) rotateX(-90deg);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="container">
+            <div class="face" id="top">Top</div>
+            <div class="face" id="bottom">Bottom</div>
+            <div class="face" id="left">Left</div>
+            <div class="face" id="right">Right</div>
+            <div class="face" id="front">Front</div>
+            <div class="face" id="back">Back</div>
+        </div>
+    </body>
+</html>
